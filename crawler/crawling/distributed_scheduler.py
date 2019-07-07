@@ -585,7 +585,7 @@ class DistributedScheduler(object):
         @param string: The cookie string
         @return: the cookie dict
         '''
-        results = re.findall('([^=]+)=([^\;]+);?\s?', string)
+        results = re.findall(r'([^=]+)=([^\;]+);?\s?', string)
         my_dict = {}
         for item in results:
             my_dict[item[0]] = item[1]

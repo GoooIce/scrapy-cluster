@@ -1,0 +1,33 @@
+version: '2.2'
+# This compose file stands up Scrapy Cluster Base Services
+# Redis, Zookeeper, Kafka
+
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    # command: redis-server --requirepass redispassword
+  zookeeper:
+    image: zookeeper:3.4.13
+    ports:
+      - "2181:2181"
+    restart: always
+  kafka:
+    # image: wurstmeister/kafka:2.11-0.11.0.3
+    image: wurstmeister/kafka:2.11-2.0.1
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.31.160
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - zookeeper
+    links:
+      - "zookeeper:zookeeper"
+    restart: always
+

@@ -7,7 +7,8 @@ import time
 import sys
 from scrapy.utils.response import response_status_message
 
-from scrapy.xlib.tx import ResponseFailed
+# from scrapy.xlib.tx import ResponseFailed
+from twisted.web.client import ResponseFailed
 from twisted.internet import defer
 from twisted.internet.error import TimeoutError, DNSLookupError, \
         ConnectionRefusedError, ConnectionDone, ConnectError, \
