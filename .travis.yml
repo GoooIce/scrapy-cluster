@@ -41,8 +41,7 @@ script:
 
 notifications:
   slack:
-    rooms:
-      secure: nPY+SvgkOrpvU76i55bDtXPbclq7WzY2DCwOCbYNzpMMTNnlqV9uhwUc31gHdl+xO8aXf52JwuOqTZnJTi9PGuomp7qf4N4z/dz3tKdjj3ppgeDx8hcmAikiM/qoOUadA9zNvP+wHfJSK7l6LnbAZgdOAXZb77Fk5rIuRr695vg=
+    slack: miantu:pA3QY1uGwXy9RXZVCc9eoAg7
     on_success: always
     on_failure: always
     on_start: always
