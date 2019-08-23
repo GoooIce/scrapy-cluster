@@ -3,6 +3,11 @@ version: '2.2'
 # Redis, Zookeeper, Kafka
 
 services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: always
   redis:
     image: redis
     ports:
@@ -22,7 +27,7 @@ services:
       - "9093:9093"
     environment:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_HOST_NAME: 192.168.31.160
+      KAFKA_ADVERTISED_HOST_NAME: localhost
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:

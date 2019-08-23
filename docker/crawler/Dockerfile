@@ -1,5 +1,5 @@
-FROM python:2.7
-MAINTAINER Madison Bahmer <madison.bahmer@istresearch.com>
+FROM python:3.6
+LABEL maintainer="Madison Bahmer <madison.bahmer@istresearch.com>"
 
 # os setup
 RUN apt-get update && apt-get -y install \
